@@ -17,6 +17,8 @@ android {
 }
 
 dependencies {
+    implementation project(Modules.presentation)
+
     implementation Libs.kotlinStdLib
     implementation Libs.appCompat
 

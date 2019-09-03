@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="seance">#9c27b0</color>
+    <color name="purple">#6a0080</color>
+    <color name="feijoa">#aed581</color>
+    <color name="tidal">#e1ffb1</color>
+    <color name="monza">#b00020</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+</resources>

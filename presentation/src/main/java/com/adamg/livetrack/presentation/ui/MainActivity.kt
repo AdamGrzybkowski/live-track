@@ -1,8 +1,8 @@
-package com.adamg.livetrack.ui
+package com.adamg.livetrack.presentation.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.adamg.livetrack.R
+import androidx.appcompat.app.AppCompatActivity
+import com.adamg.livetrack.presentation.R
 
 class MainActivity : AppCompatActivity() {
 

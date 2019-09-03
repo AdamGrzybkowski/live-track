@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="primary">@color/seance</color>
+    <color name="primaryVariant">@color/purple</color>
+    <color name="secondary">@color/feijoa</color>
+    <color name="secondaryVariant">@color/tidal</color>
+
+    <color name="background">@color/white</color>
+    <color name="surface">@color/white</color>
+    <color name="error">@color/monza</color>
+
+    <color name="onPrimary">@color/white</color>
+    <color name="onSecondary">@color/black</color>
+    <color name="onBackground">@color/black</color>
+    <color name="onSurface">@color/black</color>
+    <color name="onError">@color/white</color>
 </resources>

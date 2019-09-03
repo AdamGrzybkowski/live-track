@@ -9,5 +9,8 @@ object Libs {
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
+    const val material = "com.google.android.material:material:1.1.0-alpha09"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-beta2"
+
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.0-beta-3"
 }
