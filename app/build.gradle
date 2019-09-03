@@ -18,4 +18,5 @@ android {
 
 dependencies {
     implementation Libs.kotlinStdLib
+    implementation Libs.appCompat
 }
