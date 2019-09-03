@@ -3,4 +3,6 @@ object Libs {
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
     const val appCompat = "androidx.appcompat:appcompat:1.0.2"
+
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.0-beta-3"
 }
