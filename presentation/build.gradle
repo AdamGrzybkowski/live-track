@@ -1,0 +1,9 @@
+apply plugin: 'livetrack-android.library'
+
+dependencies {
+    implementation Libs.kotlinStdLib
+    implementation Libs.appCompat
+
+    implementation Libs.navigationFragment
+    implementation Libs.navigationUi
+}
