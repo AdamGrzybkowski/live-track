@@ -22,5 +22,7 @@ dependencies {
     implementation Libs.kotlinStdLib
     implementation Libs.appCompat
 
+    compileOnly Libs.navigationFragment
+
     debugImplementation Libs.leakCanary
 }
