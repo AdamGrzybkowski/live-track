@@ -1,5 +1,14 @@
 apply plugin: 'livetrack-android.library'
 
+def apiKeyProperties = new Properties()
+apiKeyProperties.load(new FileInputStream(rootProject.file("apiKey.properties")))
+
+android {
+    defaultConfig {
+        manifestPlaceholders = [mapsApiKey: apiKeyProperties["googleMaps"]]
+    }
+}
+
 dependencies {
     implementation Libs.kotlinStdLib
     implementation Libs.appCompat
@@ -9,4 +18,6 @@ dependencies {
 
     implementation Libs.material
     implementation Libs.constraintLayout
+
+    implementation Libs.maps
 }

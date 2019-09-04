@@ -12,5 +12,7 @@ object Libs {
     const val material = "com.google.android.material:material:1.1.0-alpha09"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-beta2"
 
+    const val maps = "com.google.android.gms:play-services-maps:17.0.0"
+
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.0-beta-3"
 }
