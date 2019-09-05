@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Livetrack</string>
+
+    <string name="permission_location_rationale">We can\'t track your activity without location ;(</string>
 </resources>

@@ -14,5 +14,7 @@ object Libs {
 
     const val maps = "com.google.android.gms:play-services-maps:17.0.0"
 
+    const val easyPermissions = "pub.devrel:easypermissions:3.0.0"
+
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.0-beta-3"
 }

@@ -11,13 +11,15 @@ android {
 
 dependencies {
     implementation Libs.kotlinStdLib
+
     implementation Libs.appCompat
+    implementation Libs.material
+    implementation Libs.constraintLayout
 
     implementation Libs.navigationFragment
     implementation Libs.navigationUi
 
-    implementation Libs.material
-    implementation Libs.constraintLayout
-
     implementation Libs.maps
+
+    implementation Libs.easyPermissions
 }
