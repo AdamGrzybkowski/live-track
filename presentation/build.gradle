@@ -1,4 +1,4 @@
-apply plugin: 'livetrack-android.library'
+apply plugin: 'livetrack-library.android'
 
 def apiKeyProperties = new Properties()
 apiKeyProperties.load(new FileInputStream(rootProject.file("apiKey.properties")))

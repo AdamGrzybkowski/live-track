@@ -41,8 +41,12 @@ gradlePlugin {
             implementationClass = 'com.adam.livetrack.plugin.ApplicationPlugin'
         }
         applicationLibraryPlugin {
-            id = 'livetrack-android.library'
+            id = 'livetrack-library.android'
             implementationClass = 'com.adam.livetrack.plugin.AndroidLibraryPlugin'
+        }
+        kotlinLibraryPlugin {
+            id = 'livetrack-library.kotlin'
+            implementationClass = 'com.adam.livetrack.plugin.KotlinLibraryPlugin'
         }
     }
 }

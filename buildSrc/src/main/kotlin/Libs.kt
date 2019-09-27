@@ -1,6 +1,7 @@
 object Libs {
     private const val kotlinVersion = "1.3.50"
     private const val navigationVersion = "2.1.0-rc01"
+    private const val threetenbpVersion = "1.4.0"
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
@@ -17,4 +18,6 @@ object Libs {
     const val easyPermissions = "pub.devrel:easypermissions:3.0.0"
 
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.0-beta-3"
+
+    const val threeTenBpNoTzDb = "org.threeten:threetenbp:$threetenbpVersion:no-tzdb"
 }

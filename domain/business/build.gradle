@@ -1,0 +1,7 @@
+apply plugin: 'livetrack-library.kotlin'
+
+dependencies {
+    implementation Libs.kotlinStdLib
+
+    implementation Libs.threeTenBpNoTzDb
+}
