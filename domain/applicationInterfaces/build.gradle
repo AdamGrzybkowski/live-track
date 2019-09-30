@@ -1,0 +1,10 @@
+apply plugin: 'livetrack-library.kotlin'
+
+dependencies {
+    implementation project(Modules.domainBusiness)
+
+    implementation Libs.kotlinStdLib
+    implementation Libs.rxJava
+
+    implementation Libs.threeTenBpNoTzDb
+}
