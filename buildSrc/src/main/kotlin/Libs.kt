@@ -3,6 +3,7 @@ object Libs {
     private const val navigationVersion = "2.1.0-rc01"
     private const val threetenbpVersion = "1.4.0"
     private const val rxJavaVersion = "2.2.12"
+    private const val daggerVersion = "2.24"
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
@@ -13,6 +14,11 @@ object Libs {
 
     const val material = "com.google.android.material:material:1.1.0-alpha09"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-beta2"
+
+    const val dagger = "com.google.dagger:dagger:$daggerVersion"
+    const val daggerProccessor = "com.google.dagger:dagger-compiler:$daggerVersion"
+    const val daggerAndroid = "com.google.dagger:dagger-android-support:$daggerVersion"
+    const val daggerAndroidProccessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
 
     const val rxJava = "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
 

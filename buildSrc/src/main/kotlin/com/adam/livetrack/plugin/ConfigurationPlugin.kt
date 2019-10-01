@@ -29,9 +29,6 @@ internal fun Project.configureKapt() {
     extensions.configure(org.jetbrains.kotlin.gradle.plugin.KaptExtension::class.java) {
         it.correctErrorTypes = true
         it.useBuildCache = true
-        it.arguments {
-            arg("dagger.gradle.incremental")
-        }
     }
 }
 
