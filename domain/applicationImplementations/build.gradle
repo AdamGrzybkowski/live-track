@@ -1,13 +1,16 @@
 apply plugin: 'livetrack-library.kotlin'
 
 dependencies {
-    implementation project(Modules.domainBusiness)
+    api project(Modules.domainBusiness)
     implementation project(Modules.domainApplicationInterfaces)
 
     implementation Libs.kotlinStdLib
 
     implementation Libs.rxJava
     implementation Libs.javaxInject
+
+    implementation Libs.dagger
+    kapt Libs.daggerProccessor
 
     implementation Libs.threeTenBpNoTzDb
 }
