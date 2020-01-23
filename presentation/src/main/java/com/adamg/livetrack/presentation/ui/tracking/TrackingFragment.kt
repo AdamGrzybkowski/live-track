@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.adamg.livetrack.presentation.R
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -14,21 +13,28 @@ import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
-class TrackingFragment : Fragment(), OnMapReadyCallback, EasyPermissions.PermissionCallbacks {
+class TrackingFragment : BaseFragment<TrackingViewModel>(), OnMapReadyCallback, EasyPermissions.PermissionCallbacks {
 
     companion object {
         private const val RC_FINE_LOCATION = 123
     }
 
+    override val viewModelClass = TrackingViewModel::class
+
     private lateinit var map: GoogleMap
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.fragment_tracking_fragmnet, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val mapFragment = childFragmentManager.findFragmentById(R.id.mapTracking) as SupportMapFragment
+        val mapFragment =
+            childFragmentManager.findFragmentById(R.id.mapTracking) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
@@ -45,7 +51,11 @@ class TrackingFragment : Fragment(), OnMapReadyCallback, EasyPermissions.Permiss
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) = Unit
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
     }

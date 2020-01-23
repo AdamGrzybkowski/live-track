@@ -10,14 +10,25 @@ android {
 }
 
 dependencies {
+    implementation project(Modules.domainApplicationImplementations)
+
     implementation Libs.kotlinStdLib
 
     implementation Libs.appCompat
     implementation Libs.material
     implementation Libs.constraintLayout
+    implementation Libs.lifecycle
+
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
+    kapt Libs.daggerProccessor
+    kapt Libs.daggerAndroidProccessor
 
     implementation Libs.navigationFragment
     implementation Libs.navigationUi
+
+    implementation Libs.rxAndroid
+    implementation Libs.rxKotlin
 
     implementation Libs.maps
 
