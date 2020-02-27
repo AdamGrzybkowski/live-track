@@ -15,7 +15,11 @@ class TrackingViewModel @Inject constructor(
         getCurrentTracking.execute()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
-                onNext = { setState { copy(tracking = tracking) } }
+                onNext = { setState { copy(tracking = it) } }
             ).addTo(compositeDisposable)
+    }
+
+    fun onPlayPauseClicked() {
+
     }
 }

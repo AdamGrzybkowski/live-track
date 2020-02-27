@@ -2,10 +2,10 @@ package com.adamg.livetrack.presentation.ui.tracking
 
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.adamg.livetrack.presentation.R
+import com.adamg.livetrack.presentation.databinding.FragmentTrackingBinding
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -13,29 +13,28 @@ import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
-class TrackingFragment : BaseFragment<TrackingViewModel>(), OnMapReadyCallback, EasyPermissions.PermissionCallbacks {
+class TrackingFragment : BaseFragment<TrackingViewModel, FragmentTrackingBinding>(), OnMapReadyCallback,
+    EasyPermissions.PermissionCallbacks {
 
     companion object {
         private const val RC_FINE_LOCATION = 123
     }
 
     override val viewModelClass = TrackingViewModel::class
+    override val layoutId = R.layout.fragment_tracking
 
     private lateinit var map: GoogleMap
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_tracking_fragmnet, container, false)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val mapFragment =
-            childFragmentManager.findFragmentById(R.id.mapTracking) as SupportMapFragment
+        val mapFragment = childFragmentManager.findFragmentById(R.id.mapTracking) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        viewModel.getViewState().observe(viewLifecycleOwner, Observer { tracking ->
+            tracking.tracking?.let {
+                binding.tracking = it
+            }
+        })
     }
 
     override fun onMapReady(googleMap: GoogleMap) {

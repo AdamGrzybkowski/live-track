@@ -2,9 +2,9 @@ package com.adamg.livetrack.presentation.ui
 
 import android.os.Bundle
 import com.adamg.livetrack.presentation.R
-import dagger.android.DaggerActivity
+import dagger.android.support.DaggerAppCompatActivity
 
-class MainActivity : DaggerActivity() {
+class MainActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

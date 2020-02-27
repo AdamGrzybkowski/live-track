@@ -7,6 +7,10 @@ android {
     defaultConfig {
         manifestPlaceholders = [mapsApiKey: apiKeyProperties["googleMaps"]]
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
