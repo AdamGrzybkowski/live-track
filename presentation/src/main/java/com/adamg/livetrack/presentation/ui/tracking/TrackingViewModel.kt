@@ -20,6 +20,5 @@ class TrackingViewModel @Inject constructor(
     }
 
     fun onPlayPauseClicked() {
-
     }
 }

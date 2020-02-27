@@ -24,4 +24,3 @@ fun setupButton(view: ImageButton, tracking: Tracking?) {
         }
     }
 }
-
