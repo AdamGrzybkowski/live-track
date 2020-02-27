@@ -29,6 +29,8 @@ dependencies {
     implementation Libs.kotlinStdLib
     implementation Libs.appCompat
 
+    implementation Libs.threeTenABP
+
     implementation Libs.dagger
     implementation Libs.daggerAndroid
     kapt Libs.daggerProccessor

@@ -1,7 +1,7 @@
 object Libs {
     private const val kotlinVersion = "1.3.50"
     private const val navigationVersion = "2.1.0-rc01"
-    private const val threetenbpVersion = "1.4.0"
+    private const val threetenbpVersion = "1.4.1"
     private const val rxJavaVersion = "2.2.12"
     private const val daggerVersion = "2.24"
     private const val lifecycleVersion = "2.2.0-alpha05"
@@ -34,6 +34,7 @@ object Libs {
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.0-beta-3"
 
     const val threeTenBpNoTzDb = "org.threeten:threetenbp:$threetenbpVersion:no-tzdb"
+    const val threeTenABP = "com.jakewharton.threetenabp:threetenabp:1.2.2"
 
     const val javaxInject = "javax.inject:javax.inject:1"
 }

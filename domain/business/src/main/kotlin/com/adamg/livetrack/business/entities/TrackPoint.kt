@@ -1,6 +1,6 @@
 package com.adamg.livetrack.business.entities
 
-import java.time.LocalDateTime
+import org.threeten.bp.LocalDateTime
 
 data class TrackPoint(
     val id: String,
