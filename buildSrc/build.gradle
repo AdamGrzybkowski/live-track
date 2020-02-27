@@ -7,7 +7,7 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-        classpath "org.jmailen.gradle:kotlinter-gradle:2.1.1"
+        classpath "org.jmailen.gradle:kotlinter-gradle:2.3.1"
     }
 }
 
@@ -29,9 +29,9 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    implementation 'com.android.tools.build:gradle:3.5.0'
-    implementation "com.github.ben-manes:gradle-versions-plugin:0.21.0"
-    implementation 'org.jmailen.gradle:kotlinter-gradle:2.1.1'
+    implementation 'com.android.tools.build:gradle:3.6.0'
+    implementation "com.github.ben-manes:gradle-versions-plugin:0.28.0"
+    implementation 'org.jmailen.gradle:kotlinter-gradle:2.3.1'
 }
 
 gradlePlugin {

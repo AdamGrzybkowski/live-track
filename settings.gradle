@@ -1,5 +1,5 @@
-include Modules.app
-include Modules.presentation
-include Modules.domainBusiness,
-        Modules.domainApplicationInterfaces,
-        Modules.domainApplicationImplementations
+include ":app"
+include ":presentation"
+include ":domain:business",
+        ":domain:applicationInterfaces",
+        ":domain:applicationImplementations"
