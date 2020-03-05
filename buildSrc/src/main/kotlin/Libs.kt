@@ -1,12 +1,12 @@
 object Libs {
-    private const val kotlinVersion = "1.3.61"
+    private const val kotlinVersion = "1.3.70"
     private const val navigationVersion = "2.3.0-alpha02"
     private const val threetenbpVersion = "1.4.1"
-    private const val rxJavaVersion = "2.2.18"
     private const val daggerVersion = "2.26"
     private const val lifecycleVersion = "2.2.0"
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    const val kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3"
 
     const val appCompat = "androidx.appcompat:appcompat:1.2.0-alpha02"
 
@@ -22,10 +22,6 @@ object Libs {
     const val daggerProccessor = "com.google.dagger:dagger-compiler:$daggerVersion"
     const val daggerAndroid = "com.google.dagger:dagger-android-support:$daggerVersion"
     const val daggerAndroidProccessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
-
-    const val rxJava = "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
-    const val rxKotlin = "io.reactivex.rxjava2:rxkotlin:2.4.0"
-    const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
 
     const val maps = "com.google.android.gms:play-services-maps:17.0.0"
 

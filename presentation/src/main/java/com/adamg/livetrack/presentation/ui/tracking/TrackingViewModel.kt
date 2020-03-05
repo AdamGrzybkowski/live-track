@@ -1,10 +1,10 @@
 package com.adamg.livetrack.presentation.ui.tracking
 
+import androidx.lifecycle.viewModelScope
 import com.adamg.livetrack.applicationimplementations.usecase.GetCurrentTrack
 import com.adamg.livetrack.presentation.ui.base.BaseViewModel
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.rxkotlin.addTo
-import io.reactivex.rxkotlin.subscribeBy
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class TrackingViewModel @Inject constructor(
@@ -12,11 +12,11 @@ class TrackingViewModel @Inject constructor(
 ) : BaseViewModel<TrackingViewState>(TrackingViewState()) {
 
     init {
-        getCurrentTracking.execute()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onNext = { setState { copy(tracking = it) } }
-            ).addTo(compositeDisposable)
+        viewModelScope.launch {
+            getCurrentTracking.execute().collect { tracking ->
+                setState { copy(tracking = tracking) }
+            }
+        }
     }
 
     fun onPlayPauseClicked() {

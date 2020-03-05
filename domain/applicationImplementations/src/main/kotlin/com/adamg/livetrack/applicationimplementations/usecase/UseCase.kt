@@ -1,17 +1,16 @@
 package com.adamg.livetrack.applicationimplementations.usecase
 
-import io.reactivex.Completable
-import io.reactivex.Observable
+import kotlinx.coroutines.flow.Flow
 
 internal interface UseCase {
 
     interface Action<in TParam> {
 
-        fun execute(param: TParam): Completable
+        suspend fun execute(param: TParam)
     }
 
     interface Query<in TParam, TResult> : UseCase {
 
-        fun execute(): Observable<TResult>
+        fun execute(): Flow<TResult>
     }
 }

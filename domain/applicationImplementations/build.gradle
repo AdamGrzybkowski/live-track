@@ -5,8 +5,8 @@ dependencies {
     implementation project(Modules.domainApplicationInterfaces)
 
     implementation Libs.kotlinStdLib
+    implementation Libs.kotlinCoroutines
 
-    implementation Libs.rxJava
     implementation Libs.javaxInject
 
     implementation Libs.dagger

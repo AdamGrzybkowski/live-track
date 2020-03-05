@@ -17,6 +17,7 @@ dependencies {
     implementation project(Modules.domainApplicationImplementations)
 
     implementation Libs.kotlinStdLib
+    implementation Libs.kotlinCoroutines
 
     implementation Libs.appCompat
     implementation Libs.material
@@ -30,9 +31,6 @@ dependencies {
 
     implementation Libs.navigationFragment
     implementation Libs.navigationUi
-
-    implementation Libs.rxAndroid
-    implementation Libs.rxKotlin
 
     implementation Libs.maps
 

@@ -4,7 +4,7 @@ dependencies {
     implementation project(Modules.domainBusiness)
 
     implementation Libs.kotlinStdLib
-    implementation Libs.rxJava
+    implementation Libs.kotlinCoroutines
 
     implementation Libs.threeTenBpNoTzDb
 }

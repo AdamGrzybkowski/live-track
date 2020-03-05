@@ -20,6 +20,7 @@ internal class ConfigurationPlugin : Plugin<Project> {
 
         tasks.withType(KotlinCompile::class.java).all {
             it.kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+            it.kotlinOptions.freeCompilerArgs += "-Xopt-in=org.mylibrary.OptInAnnotation"
         }
     }
 }
