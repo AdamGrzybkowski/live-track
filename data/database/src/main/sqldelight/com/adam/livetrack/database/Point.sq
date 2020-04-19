@@ -1,0 +1,16 @@
+PRAGMA foreign_keys = 1;
+CREATE TABLE point (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  latitude TEXT NOT NULL,
+  longitude TEXT NOT NULL,
+  registered_at INTEGER NOT NULL,
+  track_id INTEGER NOT NULL,
+  FOREIGN KEY (track_id) REFERENCES track (id) ON DELETE CASCADE
+);
+
+selectAll:
+SELECT * FROM point ORDER BY registered_at;
+
+insert:
+INSERT INTO point(latitude, longitude, registered_at, track_id)
+VALUES (?, ?, ?, ?);

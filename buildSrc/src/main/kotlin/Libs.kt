@@ -1,12 +1,15 @@
 object Libs {
-    private const val kotlinVersion = "1.3.70"
+    private const val kotlinVersion = "1.3.72"
+    private const val kotlinCoroutinesVersion = "1.3.4"
     private const val navigationVersion = "2.3.0-alpha02"
-    private const val threetenbpVersion = "1.4.1"
-    private const val daggerVersion = "2.26"
+    private const val threetenbpVersion = "1.4.3"
+    private const val daggerVersion = "2.27"
     private const val lifecycleVersion = "2.2.0"
+    private const val sqlDelightVersion = "1.3.0"
 
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
-    const val kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3"
+    const val kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
+    const val kotlinCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinCoroutinesVersion"
 
     const val appCompat = "androidx.appcompat:appcompat:1.2.0-alpha02"
 
@@ -30,7 +33,13 @@ object Libs {
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.2"
 
     const val threeTenBpNoTzDb = "org.threeten:threetenbp:$threetenbpVersion:no-tzdb"
-    const val threeTenABP = "com.jakewharton.threetenabp:threetenabp:1.2.2"
+    const val threeTenABP = "com.jakewharton.threetenabp:threetenabp:1.2.3"
 
     const val javaxInject = "javax.inject:javax.inject:1"
+
+    const val sqlDelightJvmDriver = "com.squareup.sqldelight:sqlite-driver:$sqlDelightVersion"
+    const val sqlDelightAndroidDriver = "com.squareup.sqldelight:android-driver:$sqlDelightVersion"
+    const val sqlDelightCoroutineExt = "com.squareup.sqldelight:coroutines-extensions:$sqlDelightVersion"
+
+    const val junit = "org.junit.jupiter:junit-jupiter:5.6.1"
 }

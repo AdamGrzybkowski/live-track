@@ -18,6 +18,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    packagingOptions {
+        pickFirst("META-INF/kotlinx-coroutines-core.kotlin_module")
+    }
 }
 
 dependencies {
@@ -25,6 +29,7 @@ dependencies {
     implementation project(Modules.domainApplicationInterfaces)
     implementation project(Modules.domainApplicationImplementations)
     implementation project(Modules.presentation)
+    implementation project(Modules.dataDatabase)
 
     implementation Libs.kotlinStdLib
     implementation Libs.appCompat
@@ -35,6 +40,8 @@ dependencies {
     implementation Libs.daggerAndroid
     kapt Libs.daggerProccessor
     kapt Libs.daggerAndroidProccessor
+
+    implementation Libs.sqlDelightAndroidDriver
 
     compileOnly Libs.navigationFragment
     compileOnly Libs.maps

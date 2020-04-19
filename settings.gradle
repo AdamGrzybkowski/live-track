@@ -3,4 +3,5 @@ include ":presentation"
 include ":domain:business",
         ":domain:applicationInterfaces",
         ":domain:applicationImplementations"
+include ':data:database'
 include ':testing'

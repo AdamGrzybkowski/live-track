@@ -1,0 +1,37 @@
+apply plugin: 'livetrack-library.kotlin'
+apply plugin: 'com.squareup.sqldelight'
+
+sqldelight {
+    LiveTrackDb {
+        packageName = "com.adam.livetrack.database"
+    }
+}
+
+tasks.named("lintKotlinMain") {
+    source = source - fileTree("$buildDir/generated")
+}
+tasks.named("formatKotlinMain") {
+    source = source - fileTree("$buildDir/generated")
+}
+
+dependencies {
+    implementation project(Modules.domainBusiness)
+    implementation project(Modules.domainApplicationInterfaces)
+
+    implementation Libs.kotlinStdLib
+    implementation Libs.kotlinCoroutines
+
+    implementation Libs.sqlDelightCoroutineExt
+
+    implementation Libs.dagger
+    kapt Libs.daggerProccessor
+
+    implementation Libs.javaxInject
+
+    implementation Libs.threeTenBpNoTzDb
+
+    testImplementation project(Modules.testing)
+    testImplementation Libs.sqlDelightJvmDriver
+    testImplementation Libs.kotlinCoroutinesTest
+    testImplementation Libs.junit
+}

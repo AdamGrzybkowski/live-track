@@ -17,15 +17,12 @@ class QualityPlugin : Plugin<Project> {
 }
 
 internal fun Project.configureKtlint() {
-    afterEvaluate {
-        pluginManager.apply(KotlinterPlugin::class.java)
-        extensions.configure(KotlinterExtension::class.java) {
-            it.indentSize = 4
-            it.continuationIndentSize = 4
-            it.reporters = arrayOf("plain")
-            it.experimentalRules = false
-            it.disabledRules = arrayOf("import-ordering")
-        }
+    pluginManager.apply(KotlinterPlugin::class.java)
+    extensions.configure(KotlinterExtension::class.java) {
+        it.indentSize = 4
+        it.reporters = arrayOf("plain")
+        it.experimentalRules = false
+        it.disabledRules = arrayOf("import-ordering")
     }
     tasks.withType(LintTask::class.java) {
         rootProject.tasks.named(ProjectCodeStyleTask.TASK_NAME) { projectCodeStyle ->

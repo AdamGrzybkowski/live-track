@@ -1,10 +1,10 @@
 package com.adamg.livetrack.business.entities
 
-import org.threeten.bp.LocalDateTime
+import org.threeten.bp.ZonedDateTime
 
 data class Track(
-    val id: String,
-    val startedAt: LocalDateTime,
-    val finishedAt: LocalDateTime?,
+    val id: Long,
+    val startedAt: ZonedDateTime,
+    val finishedAt: ZonedDateTime?,
     val points: List<TrackPoint>
 )

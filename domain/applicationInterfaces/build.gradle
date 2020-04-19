@@ -6,5 +6,7 @@ dependencies {
     implementation Libs.kotlinStdLib
     implementation Libs.kotlinCoroutines
 
+    implementation Libs.javaxInject
+
     implementation Libs.threeTenBpNoTzDb
 }
