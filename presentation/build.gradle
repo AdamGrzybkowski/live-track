@@ -1,11 +1,8 @@
 apply plugin: 'livetrack-library.android'
 
-def apiKeyProperties = new Properties()
-apiKeyProperties.load(new FileInputStream(rootProject.file("apiKey.properties")))
-
 android {
     defaultConfig {
-        manifestPlaceholders = [mapsApiKey: apiKeyProperties["googleMaps"]]
+        manifestPlaceholders = [mapsApiKey: getGoogleMapApiKey()]
     }
 
     dataBinding {
@@ -35,4 +32,23 @@ dependencies {
     implementation Libs.maps
 
     implementation Libs.easyPermissions
+}
+
+private String getGoogleMapApiKey() {
+    def env = System.getenv('googleMap_apiKey')
+    if (env != null) {
+        return env
+    }
+    def localProperties = rootProject.file('local.properties')
+    if (localProperties.exists()) {
+        Properties properties = new Properties()
+        properties.load(rootProject.file('local.properties').newDataInputStream())
+
+        def googleMapApiKey = properties.getProperty('googleMap.apiKey')
+        if (googleMapApiKey != null) {
+            return googleMapApiKey
+        }
+    }
+
+    throw new GradleException("googleMapKey not found")
 }
