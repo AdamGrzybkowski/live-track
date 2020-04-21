@@ -20,7 +20,15 @@ internal class ConfigurationPlugin : Plugin<Project> {
 
         tasks.withType(KotlinCompile::class.java).all {
             it.kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
-            it.kotlinOptions.freeCompilerArgs += "-Xopt-in=org.mylibrary.OptInAnnotation"
+            it.kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+        }
+
+        tasks.withType(org.gradle.api.tasks.testing.Test::class.java).all {
+            it.useJUnitPlatform()
+            it.dependsOn("cleanTest")
+            it.testLogging { testLoggingContainer ->
+                testLoggingContainer.events("passed", "skipped", "failed")
+            }
         }
     }
 }
