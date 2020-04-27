@@ -41,7 +41,7 @@ internal abstract class BaseAndroidPlugin : Plugin<Project> {
     }
 
     companion object {
-        private const val COMPILE_SDK_VERSION = 28
+        private const val COMPILE_SDK_VERSION = 29
         private const val MIN_SDK_VERSION = 23
     }
 }

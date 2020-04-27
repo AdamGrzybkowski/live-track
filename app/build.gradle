@@ -30,6 +30,7 @@ dependencies {
     implementation project(Modules.domainApplicationImplementations)
     implementation project(Modules.presentation)
     implementation project(Modules.dataDatabase)
+    implementation project(Modules.dataPlatform)
 
     implementation Libs.kotlinStdLib
     implementation Libs.appCompat

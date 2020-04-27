@@ -1,10 +1,10 @@
 package com.adamg.livetrack.business.entities
 
-import org.threeten.bp.ZonedDateTime
+import org.threeten.bp.Instant
 
 data class Track(
     val id: Long,
-    val startedAt: ZonedDateTime,
-    val finishedAt: ZonedDateTime?,
+    val startedAt: Instant,
+    val finishedAt: Instant?,
     val points: List<TrackPoint>
 )

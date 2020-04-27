@@ -17,7 +17,6 @@ import org.junit.jupiter.api.Test
 import org.threeten.bp.Clock
 import org.threeten.bp.Instant
 import org.threeten.bp.ZoneOffset
-import org.threeten.bp.ZonedDateTime
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DbTrackLocalSourceTest {
@@ -45,7 +44,6 @@ class DbTrackLocalSourceTest {
         trackLocalSource = DbTrackLocalSource(
             trackQueries = database.trackQueries,
             pointQueries = database.pointQueries,
-            clock = clock,
             contextFacade = coroutinesContextFacade
         )
     }
@@ -105,7 +103,7 @@ class DbTrackLocalSourceTest {
     private fun createTrack(identifier: Int): Track {
         return Track(
             id = identifier.toLong(),
-            startedAt = ZonedDateTime.now(clock),
+            startedAt = Instant.now(clock),
             finishedAt = null,
             points = emptyList()
         )
@@ -114,9 +112,9 @@ class DbTrackLocalSourceTest {
     private fun createTrackPoint(identifier: Int): TrackPoint {
         return TrackPoint(
             id = identifier.toLong(),
-            latitude = identifier.toFloat(),
-            longitude = identifier.toFloat(),
-            registeredAt = ZonedDateTime.now(clock)
+            latitude = identifier.toDouble(),
+            longitude = identifier.toDouble(),
+            registeredAt = Instant.now(clock)
         )
     }
 }

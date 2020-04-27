@@ -24,12 +24,11 @@ class TrackingViewModel @Inject constructor(
         }
     }
 
-    fun onPlayPauseClicked() {
+    fun onPlayStopClicked() {
         viewModelScope.launch {
             when (val tracking = getViewState().value?.tracking) {
                 Tracking.InActive -> startTracking.execute(Unit)
                 is Tracking.Active -> stopTracking.execute(tracking.track.id)
-                null -> Unit
             }
         }
     }

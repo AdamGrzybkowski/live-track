@@ -21,6 +21,8 @@ object Libs {
     const val material = "com.google.android.material:material:1.2.0-alpha05"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
 
+    const val googleLocation = "com.google.android.gms:play-services-location:17.0.0"
+
     const val dagger = "com.google.dagger:dagger:$daggerVersion"
     const val daggerProccessor = "com.google.dagger:dagger-compiler:$daggerVersion"
     const val daggerAndroid = "com.google.dagger:dagger-android-support:$daggerVersion"
