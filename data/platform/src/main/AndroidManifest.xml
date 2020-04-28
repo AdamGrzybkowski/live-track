@@ -1,0 +1,13 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.adamg.livetrack.platform"
+    >
+
+    <application>
+
+        <service
+            android:name=".location.LocationForegroundService"
+            android:foregroundServiceType="location"
+            />
+    </application>
+</manifest>

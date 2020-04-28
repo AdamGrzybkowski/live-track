@@ -6,7 +6,7 @@ import androidx.databinding.BindingAdapter
 import com.adamg.livetrack.business.entities.Tracking
 import com.adamg.livetrack.presentation.R
 
-@BindingAdapter("app:tracking")
+@BindingAdapter("tracking")
 fun setupButton(view: ImageButton, tracking: Tracking?) {
     when (tracking) {
         Tracking.InActive -> {

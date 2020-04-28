@@ -1,0 +1,18 @@
+apply plugin: 'livetrack-library.android'
+
+dependencies {
+    implementation project(Modules.domainBusiness)
+    implementation project(Modules.domainApplicationInterfaces)
+    implementation project(Modules.domainApplicationImplementations)
+
+    implementation Libs.kotlinStdLib
+    implementation Libs.kotlinCoroutines
+    implementation Libs.googleLocation
+
+    implementation Libs.dagger
+    implementation Libs.daggerAndroid
+    kapt Libs.daggerProccessor
+    kapt Libs.daggerAndroidProccessor
+
+    implementation Libs.threeTenBpNoTzDb
+}

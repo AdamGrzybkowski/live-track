@@ -5,5 +5,6 @@ object Modules {
     const val domainApplicationInterfaces = ":domain:applicationInterfaces"
     const val domainApplicationImplementations = ":domain:applicationImplementations"
     const val dataDatabase = ":data:database"
+    const val dataPlatform = ":data:platform"
     const val testing = ":testing"
 }

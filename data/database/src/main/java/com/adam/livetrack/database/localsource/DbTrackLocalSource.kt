@@ -16,16 +16,13 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
-import org.threeten.bp.Clock
 import org.threeten.bp.Instant
-import org.threeten.bp.ZonedDateTime
 import javax.inject.Inject
 
 @OptIn(ExperimentalCoroutinesApi::class)
 internal class DbTrackLocalSource @Inject constructor(
     private val trackQueries: TrackQueries,
     private val pointQueries: PointQueries,
-    private val clock: Clock,
     private val contextFacade: CoroutinesContextFacade
 ) : TrackLocalSource {
 
@@ -39,31 +36,31 @@ internal class DbTrackLocalSource @Inject constructor(
             .distinctUntilChanged()
             .flowOn(contextFacade.io)
         return trackFlow.combine(pointsFlow) { track, points ->
-                track?.let {
-                    Track(
-                        id = track.id,
-                        startedAt = Instant.ofEpochMilli(track.started_at).atZone(clock.zone),
-                        finishedAt = track.finished_at?.let { finishedAt -> Instant.ofEpochMilli(finishedAt).atZone(clock.zone) },
-                        points = points.filter { it.track_id == track.id }.map { it.toDomainPoint() }
-                    )
-                }
+            track?.let {
+                Track(
+                    id = track.id,
+                    startedAt = Instant.ofEpochMilli(track.started_at),
+                    finishedAt = track.finished_at?.let { finishedAt -> Instant.ofEpochMilli(finishedAt) },
+                    points = points.filter { it.track_id == track.id }.map { it.toDomainPoint() }
+                )
             }
+        }
             .distinctUntilChanged()
     }
 
-    override suspend fun createTrack(startedAt: ZonedDateTime) = withContext(contextFacade.io) {
+    override suspend fun createTrack(startedAt: Instant) = withContext(contextFacade.io) {
         trackQueries.insert(started_at = startedAt.toEpochMilli())
     }
 
-    override suspend fun finishTrack(trackId: Long, finishedAt: ZonedDateTime) = withContext(contextFacade.io) {
+    override suspend fun finishTrack(trackId: Long, finishedAt: Instant) = withContext(contextFacade.io) {
         trackQueries.updateFinishedAt(finishedAt.toEpochMilli(), trackId)
     }
 
     override suspend fun addTrackPoint(
         trackId: Long,
-        latitude: Float,
-        longitude: Float,
-        registeredAt: ZonedDateTime
+        latitude: Double,
+        longitude: Double,
+        registeredAt: Instant
     ) = withContext(contextFacade.io) {
         pointQueries.insert(
             track_id = trackId,
@@ -76,11 +73,9 @@ internal class DbTrackLocalSource @Inject constructor(
     private fun Point.toDomainPoint(): TrackPoint {
         return TrackPoint(
             id = id,
-            latitude = latitude.toFloat(),
-            longitude = longitude.toFloat(),
-            registeredAt = Instant.ofEpochMilli(registered_at).atZone(clock.zone)
+            latitude = latitude.toDouble(),
+            longitude = longitude.toDouble(),
+            registeredAt = Instant.ofEpochMilli(registered_at)
         )
     }
-
-    private fun ZonedDateTime.toEpochMilli() = toInstant().toEpochMilli()
 }
