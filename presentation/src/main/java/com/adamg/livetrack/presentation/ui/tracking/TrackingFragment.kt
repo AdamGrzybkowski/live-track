@@ -6,6 +6,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import com.adamg.livetrack.presentation.R
 import com.adamg.livetrack.presentation.databinding.FragmentTrackingBinding
+import com.adamg.livetrack.presentation.ui.base.BaseFragment
 import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions

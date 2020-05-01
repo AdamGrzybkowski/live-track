@@ -1,4 +1,4 @@
-package com.adamg.livetrack.presentation.ui.tracking
+package com.adamg.livetrack.presentation.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import com.adamg.livetrack.presentation.BR
-import com.adamg.livetrack.presentation.ui.base.ViewModelFactory
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import kotlin.reflect.KClass
@@ -16,7 +15,7 @@ import kotlin.reflect.KClass
 abstract class BaseFragment<V : ViewModel, B : ViewDataBinding> : DaggerFragment() {
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory<TrackingViewModel>
+    lateinit var viewModelFactory: ViewModelFactory<V>
 
     abstract val viewModelClass: KClass<V>
     abstract val layoutId: Int
