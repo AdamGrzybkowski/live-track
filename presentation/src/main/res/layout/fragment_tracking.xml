@@ -7,11 +7,6 @@
     <data>
 
         <variable
-            name="tracking"
-            type="com.adamg.livetrack.business.entities.Tracking"
-            />
-
-        <variable
             name="model"
             type="com.adamg.livetrack.presentation.ui.tracking.TrackingViewModel"
             />
@@ -26,20 +21,20 @@
             android:id="@+id/mapView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:tracking="@{tracking}"
+            app:tracking="@{model.viewState.tracking}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <ImageButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnTrackingPlayPause"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="34dp"
             android:onClick="@{() -> model.onPlayStopClicked()}"
-            app:tracking="@{tracking}"
+            app:trackingButtonState="@{model.trackingButtonState}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

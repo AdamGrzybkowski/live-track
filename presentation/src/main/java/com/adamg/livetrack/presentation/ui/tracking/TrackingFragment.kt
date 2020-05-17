@@ -3,7 +3,6 @@ package com.adamg.livetrack.presentation.ui.tracking
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.Observer
 import com.adamg.livetrack.presentation.R
 import com.adamg.livetrack.presentation.databinding.FragmentTrackingBinding
 import com.adamg.livetrack.presentation.ui.base.BaseFragment
@@ -59,12 +58,6 @@ class TrackingFragment : BaseFragment<TrackingViewModel, FragmentTrackingBinding
         super.onViewCreated(view, savedInstanceState)
         binding.mapView.onCreate(savedInstanceState)
         requireLocationPermission()
-
-        viewModel.getViewState().observe(viewLifecycleOwner, Observer { viewState ->
-            viewState.tracking?.let { tracking ->
-                binding.tracking = tracking
-            }
-        })
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: List<String>) {

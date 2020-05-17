@@ -1,26 +1,31 @@
 package com.adamg.livetrack.presentation.bindingadapters
 
 import android.view.View
-import android.widget.ImageButton
 import androidx.databinding.BindingAdapter
-import com.adamg.livetrack.business.entities.Tracking
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import com.adamg.livetrack.presentation.R
+import com.adamg.livetrack.presentation.ui.tracking.TrackingViewState
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-@BindingAdapter("tracking")
-fun setupButton(view: ImageButton, tracking: Tracking?) {
-    when (tracking) {
-        Tracking.InActive -> {
-            view.setBackgroundResource(R.drawable.button_background_green_circle)
-            view.setImageResource(R.drawable.ic_start)
-            view.visibility = View.VISIBLE
+@BindingAdapter("trackingButtonState")
+fun FloatingActionButton.setupButton(trackButtonState: TrackingViewState.TrackButtonState?) {
+    when (trackButtonState) {
+        TrackingViewState.TrackButtonState.PLAY -> {
+            AnimatedVectorDrawableCompat.create(context, R.drawable.ic_stop_play)?.let {
+                setImageDrawable(it)
+                it.start()
+            }
+            visibility = View.VISIBLE
         }
-        is Tracking.Active -> {
-            view.setBackgroundResource(R.drawable.button_background_red_circle)
-            view.setImageResource(R.drawable.ic_stop)
-            view.visibility = View.VISIBLE
+        TrackingViewState.TrackButtonState.STOP -> {
+            AnimatedVectorDrawableCompat.create(context, R.drawable.ic_play_stop)?.let {
+                setImageDrawable(it)
+                it.start()
+            }
+            visibility = View.VISIBLE
         }
-        else -> {
-            view.visibility = View.GONE
+        null -> {
+            visibility = View.GONE
         }
     }
 }
